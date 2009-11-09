@@ -1,0 +1,12 @@
+{
+    "title":"Archive",
+    "jcr:primaryType":"nt:unstructured",
+    "sling:resourceType":"gather/sandbox/link",
+    "url":"/archiver",
+    "list":{
+        "jcr:primaryType":"nt:unstructured",
+        "sling:resourceType":"gather/sandbox/link",
+        "title":"List",
+        "url":"/sandbox/pages/archiver/data.html"
+    }
+}

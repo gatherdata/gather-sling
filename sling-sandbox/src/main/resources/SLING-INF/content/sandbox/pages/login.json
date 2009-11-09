@@ -1,0 +1,6 @@
+{
+	"title":"Sample Blueprint Page",
+	"jcr:primaryType":"nt:unstructured",
+    "sling:resourceType":"gather/sandbox/BluePrintPage",
+	"content":"login.html"
+}

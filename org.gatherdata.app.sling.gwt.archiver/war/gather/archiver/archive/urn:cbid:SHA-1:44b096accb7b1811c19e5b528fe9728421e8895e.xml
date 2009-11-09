@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<archive>
+  <uid>urn:cbid:SHA-1:44b096accb7b1811c19e5b528fe9728421e8895e</uid>
+  <dateCreated>2009-10-06T13:07:34.057-04:00</dateCreated>
+  <content><![CDATA[<mock id="0">
+	<message>this is not real data</message>
+</mock>]]></content>
+  <metadata />
+</archive>

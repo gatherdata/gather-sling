@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <parent>
+        <relativePath>../poms/compiled/</relativePath>
+        <groupId>org.gatherdata.app.gather-sling.build</groupId>
+        <artifactId>compiled-bundle-settings</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <properties>
+        <bundle.symbolicName>org.gatherdata.app.gather-sling.sandbox</bundle.symbolicName>
+        <bundle.namespace>org.gatherdata.app.sling.sandbox</bundle.namespace>
+        <orbeon.server.url>http://localhost:8091/orbeon</orbeon.server.url>
+    </properties>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.gatherdata.app.gather-sling</groupId>
+    <artifactId>sling-sandbox</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <name>gather-sling - sandbox (content)</name>
+
+    <packaging>bundle</packaging>
+
+    <build>
+        <!--
+            resources> <resource> <directory>src/main/scripts</directory> </resource> <resource>
+            <directory>srv/main/resources</directory> </resource> </resources
+        -->
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/*.json</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+                <excludes>
+                    <exclude>**/*.json</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>src/main/scripts</directory>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>maven-sling-plugin</artifactId>
+                <configuration>
+                    <slingUrl>http://localhost:${org.osgi.service.http.port}/system/console</slingUrl>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-scr-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

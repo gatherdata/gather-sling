@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <parent>
+    <relativePath>../poms/compiled/</relativePath>
+    <groupId>org.gatherdata.app.gather-sling.build</groupId>
+    <artifactId>compiled-bundle-settings</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
+  <properties>
+    <bundle.symbolicName>org.gatherdata.app.sling.common.content</bundle.symbolicName>
+    <bundle.namespace>org.gatherdata.app.sling.common.content</bundle.namespace>
+  </properties>
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.gatherdata.app.gather-sling</groupId>
+  <artifactId>org.gatherdata.app.sling.common.content</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <name>gather-sling - common elements (content)</name>
+
+  <packaging>bundle</packaging>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>osgi_R4_core</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>osgi_R4_compendium</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.sling</groupId>
+        <artifactId>org.apache.sling.scripting.jsp.taglib</artifactId>
+        <version>${sling-framework.version}</version>
+        <optional>true</optional>
+    </dependency>
+    <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>jstl</artifactId>
+        <version>1.2</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+      <resources>
+          <resource>
+              <directory>src/main//generated-resources</directory>
+          </resource>
+          <resource>
+              <directory>src/main/resources</directory>
+          </resource>
+          <resource>
+              <directory>src/main/scripts</directory>
+          </resource>
+      </resources>
+      <plugins>
+          <plugin> 
+              <groupId>org.apache.sling</groupId> 
+              <artifactId>maven-sling-plugin</artifactId> 
+              <configuration>
+                  <slingUrl>http://localhost:${org.osgi.service.http.port}/system/console</slingUrl>
+              </configuration>
+          </plugin> 
+          <plugin>
+              <groupId>org.apache.sling</groupId>
+              <artifactId>maven-jspc-plugin</artifactId>
+              <configuration>
+                  <!-- outputDirectory>${project.build.directory}/jspc-plugin-generated</outputDirectory -->
+                  <servletPackage>${bundle.namespace}.jsp</servletPackage>
+              </configuration>
+              <executions>
+                  <execution>
+                      <id>compile-jsp</id>
+                      <goals>
+                          <goal>jspc</goal>
+                      </goals>
+                  </execution>
+              </executions>
+          </plugin>
+          <plugin>
+              <groupId>org.codehaus.mojo</groupId>
+              <artifactId>exec-maven-plugin</artifactId>
+              <version>1.1</version>
+              <executions>
+                  <execution>
+                      <phase>generate-resources</phase>
+                      <goals>
+                          <goal>exec</goal>
+                      </goals>
+                  </execution>
+              </executions>
+              <configuration>
+                  <executable>ruby</executable>
+                  <arguments>
+                      <argument>${basedir}/src/main/css/blueprint/lib/compress.rb</argument>
+                      <argument>--settings_file=${basedir}/src/main/css/blueprint/lib/settings.yml</argument>
+                      <argument>--output_path=${basedir}/src/main/generated-resources/SLING-INF/content/css/blueprint</argument>
+                      <argument>--project=gather</argument>
+                  </arguments>
+              </configuration>
+          </plugin>
+      </plugins>
+  </build>
+
+</project>

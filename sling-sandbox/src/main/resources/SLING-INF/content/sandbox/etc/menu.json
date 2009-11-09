@@ -1,0 +1,5 @@
+{
+	"jcr:primaryType":"nt:unstructured",
+	"sling:resourceType":"gather/sandbox/collection",
+	"aggregateType":"gather/sandbox/menu"
+}

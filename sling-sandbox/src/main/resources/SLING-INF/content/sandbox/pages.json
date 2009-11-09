@@ -1,0 +1,10 @@
+{
+	"jcr:mixinTypes": [ "sling:Redirect" ],
+    "sling:resourceType": "sling:redirect",
+    "sling:target": "index.html",
+        "index":{
+        "title":"Welcome",
+        "jcr:primaryType":"nt:unstructured",
+    	"sling:resourceType":"gather/sandbox/BluePrintPage"
+	}
+}

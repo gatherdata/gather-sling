@@ -1,0 +1,5 @@
+{
+    "title":"JCR Query Explorer",
+    "jcr:primaryType":"nt:unstructured",
+    "sling:resourceType":"gather/sandbox/QueryPage"
+}

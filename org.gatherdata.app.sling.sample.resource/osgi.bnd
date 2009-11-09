@@ -1,0 +1,7 @@
+#-----------------------------------------------------------------
+# Use this file to add customized Bnd instructions for the bundle
+#-----------------------------------------------------------------
+
+# This sample uses SCR annotations instead. 
+# Take a look at src/main/java/org/gatherdata/app/sling/sample/resource/internal/SampleResourceProvider.java
+#Bundle-Activator: ${bundle.namespace}.internal.ExampleActivator

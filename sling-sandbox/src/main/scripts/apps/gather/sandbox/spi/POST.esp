@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<%
+			function classForName(name) {
+			    try {
+			        return java.lang.Class.forName(name);
+			    } catch (e if e.javaException instanceof java.lang.ClassNotFoundException) {
+			        print("Class " + name + " not found");
+			    } catch (e if e.javaException instanceof java.lang.NullPointerException) {
+			        print("Class name is null");
+			    }
+			}		
+		%>
+	</head>
+	<body>
+		<h1>post handled by apps/gather/sandbox/spi/POST.esp</h1>
+		<h2>PathInfo summary:</h2>
+		<% pathinfo = request.requestPathInfo; %>
+		<ul>
+			<li>resource path: <%= pathinfo.resourcePath %></li>
+			<li>selectors: <%= pathinfo.selectorString %></li>
+			<li>extension: <%= pathinfo.extension %></li>
+			<li>suffix: <%= pathinfo.suffix %></li>
+		</ul>
+		<h2>Requested service:</h2>
+		<ul>
+			<% serviceClass = currentNode['serviceClass']; %>
+			<li>service class: <%= serviceClass %></li>
+			<% 
+				if (serviceClass != undefined) {
+					foundService = sling.getService(eval("Packages."+serviceClass));
+				} else {
+					foundService = undefined;
+				}
+			%>
+			<li>found service: <%= foundService %></li>
+			<%
+			     if (foundService != undefined) {
+			         foundService.sendMessage(request, response, "xforms-workflow"); // currentNode['serviceArgs']);
+			     }
+			%>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,64 @@
+{
+	"jcr:primaryType":"nt:unstructured",
+	"sling:resourceType":"gather/collection",
+	"prepare":{
+        "title":"Prepare",
+        "jcr:primaryType":"nt:unstructured",
+        "sling:resourceType":"gather/link",
+        "url":"/gather/formBuilder.html",
+        "builder":{
+            "title":"Form Builder",
+            "jcr:primaryType":"nt:unstructured",
+            "sling:resourceType":"gather/link",
+            "url":"/gather/formBuilder.html"
+        },
+        "published":{
+            "title":"Published Forms",
+            "jcr:primaryType":"nt:unstructured",
+            "sling:resourceType":"gather/link",
+            "url":"/gather/pubforms.html"
+        },
+        "alerts":{
+            "title":"Alerts",
+            "jcr:primaryType":"nt:unstructured",
+            "sling:resourceType":"gather/link",
+            "url":"/gather/alerts.html"
+        }
+	},
+	"data":{
+        "title":"Data",
+        "jcr:primaryType":"nt:unstructured",
+        "sling:resourceType":"gather/link",
+        "url":"/gather/archiver/status",
+        "archives":{
+            "title":"Archival Data",
+            "jcr:primaryType":"nt:unstructured",
+            "sling:resourceType":"gather/link",
+            "url":"/gather/archiver.html"
+        }
+    },
+    "report":{
+        "title":"Report",
+        "jcr:primaryType":"nt:unstructured",
+        "sling:resourceType":"gather/link",
+        "url":"/gather/pentaho.html",
+        "pentaho":{
+            "title":"Pentaho",
+            "jcr:primaryType":"nt:unstructured",
+            "sling:resourceType":"gather/link",
+            "url":"/gather/pentaho.html"
+        }
+    },
+    "system":{
+        "title":"System",
+        "jcr:primaryType":"nt:unstructured",
+        "sling:resourceType":"gather/link",
+        "url":"/system/console",
+        "bundles":{
+            "jcr:primaryType":"nt:unstructured",
+            "sling:resourceType":"gather/link",
+            "title":"Web Management Console - Bundles",
+            "url":"/system/console"
+        }
+    }
+}

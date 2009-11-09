@@ -1,0 +1,33 @@
+<%
+    response.setContentType("text/plain"); 
+    response.setCharacterEncoding("UTF-8"); 
+
+	function classForName(name) {
+	    try {
+	        return java.lang.Class.forName(name);
+	    } catch (e if e.javaException instanceof java.lang.ClassNotFoundException) {
+	        print("Class " + name + " not found");
+	    } catch (e if e.javaException instanceof java.lang.NullPointerException) {
+	        print("Class name is null");
+	    }
+	}		
+	
+     resourceMap = resource.adaptTo(Packages.org.apache.sling.api.resource.ValueMap);
+     log.info("resource map: " + resourceMap);
+	 producerClass = resourceMap.get('producerClass');
+	 workflow = resourceMap.get('workflow');
+
+	if (producerClass != undefined) {
+		foundProducer = sling.getService(eval("Packages."+producerClass));
+	} else {
+		foundProducer = undefined;
+	}
+
+     if (foundProducer != undefined) {
+         foundProducer.sendMessage(request, response, workflow);
+     }
+%>
+
+Data submitted successfully.
+Thank-you! 
+			

@@ -1,0 +1,19 @@
+<%
+    function listNodesUnder(parent) {
+        var subnodes = parent.getNodes();
+        for (var nodename in subnodes) {
+            var node = subnodes[nodename];
+            out.print('<li><a href=\"' + node["url"] + '\">' + node["title"] + '</a>');
+            if (node.getNodes().length != 0) {
+                out.print('<ul>');
+                listNodesUnder(node);
+                out.print('</ul>');
+            }
+            out.print('</li>');
+        }
+    }
+    
+%>
+<ul class="sf-menu" id="<%= (currentNode.title || currentNode.path ) %>">
+   <% listNodesUnder(currentNode); %>
+</ul>

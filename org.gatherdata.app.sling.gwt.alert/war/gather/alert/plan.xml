@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<response>
+    <status>0</status>
+    <startRow>0</startRow>
+    <data>
+        <record>
+            <uid>urn:cbid:SHA-1:b7a99801b85bc96271b7b7e2cb8b8d0a1de406c5</uid>
+            <dateCreated>2009-10-16T12:28:01.231-04:00</dateCreated>
+            <eventUid>urn:cbid:SHA-1:83074f5cc01791c78134ca311c577857255ec399</eventUid>
+            <eventName>samInTheHouse</eventName>
+            <eventDescription>Sam is in the house'</eventDescription>
+            <ruleUid>urn:cbid:SHA-1:bd1e974064dbd44610aa38e38012d91e0d777e27</ruleUid>
+            <ruleLanguage>xpath</ruleLanguage>
+            <ruleScript>//*[name='Sam']</ruleScript>
+            <noticeDestination>mailto:sysadmin@kollegger.name</noticeDestination>
+            <noticeLanguage>vm</noticeLanguage>
+            <noticeTemplate>detected event: $event</noticeTemplate>
+        </record>
+        <record>
+            <ruleLanguage>xpath</ruleLanguage>
+            <uid>urn:cbid:SHA-1:3d30b088d0749c4ec0596403ff982babd35fe04c</uid>
+            <noticeDestination>mailto:sysadmin@kollegger.name</noticeDestination>
+            <eventDescription>looks for Sam elements in XML'</eventDescription>
+            <ruleUid>urn:cbid:SHA-1:d7f940bacd09881b09074adddbc512174ee021b4</ruleUid>
+            <ruleScript>//*[name='Sam']</ruleScript>
+            <eventUid>urn:cbid:SHA-1:ea4d09b879fda84eda1d868e7dd714063ba340e8</eventUid>
+            <dateCreated>2009-10-16T12:28:01.037-04:00</dateCreated>
+            <eventName>whereIsSam</eventName>
+            <noticeLanguage>vm</noticeLanguage>
+            <noticeTemplate>test gather-alert message</noticeTemplate>
+        </record>
+    </data>
+    <endRow>2</endRow>
+    <totalRows>2</totalRows>
+</response>

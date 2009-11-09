@@ -1,0 +1,5 @@
+{
+    "title":"Sample Menu Rendering",
+    "jcr:primaryType":"nt:unstructured",
+    "sling:resourceType":"gather/sandbox/MenuTestPage"
+}

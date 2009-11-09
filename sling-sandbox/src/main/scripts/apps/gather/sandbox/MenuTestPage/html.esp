@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" media="screen" href="/css/superfish/superfish.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="/css/superfish/superfish-vertical.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="/css/superfish/superfish-navbar.css" />
+
+        <script type="text/javascript" src="/js/jquery-1.3.2.js"></script>
+        <script type="text/javascript" src="/js/superfish-1.4.8.js"></script>
+
+        <script type="text/javascript">
+           $(document).ready(function(){
+               // Your code here
+               $('ul.sf-menu').superfish(); 
+           });
+        </script>
+    </head>
+    <body>
+        <h1>MenuPage</h1>
+        <p>This is a test page which includes /sandbox/etc/menu.superfish.html to render the children
+            of /sandbox/etc/menu as hierarchical unordered lists suitable for use by the 
+            <a href="http://users.tpg.com.au/j_birch/plugins/superfish/">Superfish</a> jQuery menu plugin.
+        </p>
+        
+        <% sling.include('/sandbox/etc/menu.superfish.html'); %>
+        
+    </body>
+</html>

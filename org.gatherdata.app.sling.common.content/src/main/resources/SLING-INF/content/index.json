@@ -1,0 +1,6 @@
+{
+	"title":"gather - transform - report",
+	"jcr:primaryType":"nt:unstructured",
+    "sling:resourceType":"gather/BluePrintPage",
+	"content":"content.html"
+}

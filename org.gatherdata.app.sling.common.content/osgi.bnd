@@ -1,0 +1,6 @@
+#-----------------------------------------------------------------
+# Use this file to add customized Bnd instructions for the bundle
+#-----------------------------------------------------------------
+
+Sling-Initial-Content: SLING-INF/content;overwrite:=true;uninstall:=true
+Sling-Bundle-Resources: /apps/gather/,/apps/nt/file

@@ -1,0 +1,25 @@
+
+require 'objective-j'
+require 'objective-j/bundletask'
+
+if !ENV['CONFIG']
+    ENV['CONFIG'] = 'Debug'
+end
+
+ObjectiveJ::BundleTask.new(:hello) do |t|
+    t.name          = 'hello'
+    t.identifier    = 'com.yourcompany.hello'
+    t.version       = '1.0'
+    t.author        = 'Your Company'
+    t.email         = 'feedback @nospam@ yourcompany.com'
+    t.summary       = 'hello'
+    t.sources       = FileList['*.j']
+    t.resources     = FileList['Resources/*']
+    t.index_file    = 'index.html'
+    t.info_plist    = 'Info.plist'
+    t.build_path    = File.join('Build', ENV['CONFIG'], 'hello')
+    t.flag          = '-DDEBUG' if ENV['CONFIG'] == 'Debug'
+    t.flag          = '-O' if ENV['CONFIG'] == 'Release'
+end
+
+task :default => [:hello]

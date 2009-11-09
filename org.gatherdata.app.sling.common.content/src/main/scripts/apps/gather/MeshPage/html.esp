@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+	<%
+	    load("head.esp");
+	%>
+	
+    <body>
+        <div class="container">
+            
+            <div id="header" class="span-24 last">
+                
+            </div>
+            
+            <div id="content" class="span-24 last">
+                <%
+                    if(currentNode.hasNode("content")) {
+                        sling.include("content");
+                    }
+                %>
+            </div>
+            
+            <div id="footer" class="span-24 last">
+                <p class="quiet">Rendered by gather/MeshPage/html.esp</p>
+            </div>
+        </div>
+    </body>
+</html>

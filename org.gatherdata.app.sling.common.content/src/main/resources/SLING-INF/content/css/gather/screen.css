@@ -1,0 +1,83 @@
+/* @override 
+	http://localhost:8090/css/gather/screen.css
+*/
+
+body {
+	background-color: #333;
+}
+
+.container {
+	background-color: whitesmoke;
+	padding-left: 1pc;
+	padding-right: 1pc;
+	min-width: 960px; 
+    width: 98%; 
+    margin: 0 auto; 
+    padding: 0;
+	overflow: hidden;
+}
+
+#header {
+	width: 100%;
+	height: 5ex;
+	background: #e9c162 url(/images/sling-logo.png) no-repeat right top;
+}
+
+div#header ul {
+	height: 5ex;
+}
+
+
+#content {
+	float: none;
+	border-top-style: solid;
+	padding: 1ex;
+}
+
+div#content iframe {
+	width: 100%;
+	min-height: 600px;
+	padding: 0;
+	overflow: scroll;
+}
+
+#footer {
+	background-color: #424242;
+	color: #e9c162;
+	min-height: 10ex;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	border-top: 4px solid #e9c162;
+}
+
+#footer p {
+	text-align: center;
+}
+
+.ui-state-highlight td {
+	background-color: #b3d7ef;
+	border-width: 4px;
+	border-color: #f82b20;
+        min-width: 960px; 
+        width: 80%; 
+        margin: 0 auto; 
+        padding: 0; 
+        overflow: scroll; 
+}
+
+.ui-jqgrid .ui-pg-table {width: inherit;}
+
+div#splash {
+	width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	background-image: none;
+}
+
+div#app-tag {
+	float: right;
+	height: 1ex;
+	margin-top: 12px;
+	color: #424242;
+}

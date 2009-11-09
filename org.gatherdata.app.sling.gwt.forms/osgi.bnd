@@ -1,0 +1,9 @@
+#-----------------------------------------------------------------
+# Use this file to add customized Bnd instructions for the bundle
+#-----------------------------------------------------------------
+Export-Package: !*
+Private-Package: !*
+Include-Resource: ${project.build.directory}/gwt
+
+# this should be the same as the name of the (possibly renamed) module
+Sling-Bundle-Resources: /${gwt.app.root}

@@ -1,0 +1,44 @@
+{
+    "title":"Forms",
+    "jcr:primaryType":"nt:unstructured",
+    "sling:resourceType":"gather/sandbox/link",
+    "url":"${orbeon.server.url}/gather-orbeon/",
+	"forms":{
+		"jcr:primaryType":"nt:unstructured",
+		"sling:resourceType":"gather/sandbox/link",
+		"title":"Forms",
+		"url":"${orbeon.server.url}/gather-orbeon/"
+	},
+	"builder":{
+        "jcr:primaryType":"nt:unstructured",
+        "sling:resourceType":"gather/sandbox/link",
+        "title":"Form Builder",
+        "url":"${orbeon.server.url}/fr/orbeon/builder/summary/"
+    },
+    "orbeon":{
+        "jcr:primaryType":"nt:unstructured",
+        "sling:resourceType":"gather/sandbox/link",
+        "title":"Orbeon",
+        "url":"${orbeon.server.url}/"
+    },
+    "exist":{
+        "jcr:primaryType":"nt:unstructured",
+        "sling:resourceType":"gather/sandbox/link",
+        "title":"Raw XML",
+        "url":"${orbeon.server.url}/exist/rest/",
+        "exist":{
+            "jcr:primaryType":"nt:unstructured",
+            "sling:resourceType":"gather/sandbox/link",
+            "title":"Raw XML",
+            "url":"${orbeon.server.url}/exist/rest/"
+        },
+        "url":"http://localhost:8091/orbeon/exist/rest/",
+        "exist":{
+            "jcr:primaryType":"nt:unstructured",
+            "sling:resourceType":"gather/sandbox/link",
+            "title":"Gather Forms",
+            "url":"${orbeon.server.url}/exist/rest/gather"
+        }
+    }
+	   
+}

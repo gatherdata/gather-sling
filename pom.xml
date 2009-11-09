@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.gatherdata.app</groupId>
+  <artifactId>gather-sling</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <name>org.gatherdata.app.gather-sling (OSGi project)</name>
+
+  <description>GATHER Web Application based on Apache Sling</description>
+
+  <properties>
+    <!-- build properties -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!-- pax-runner runtime properties -->
+    <sling.home>./sling</sling.home>
+    <ds.factory.enabled>true</ds.factory.enabled>
+    <neo4j.embeddedneo.store.dir>./neo</neo4j.embeddedneo.store.dir>
+    <bundles.configuration.location>${basedir}/config</bundles.configuration.location>
+    <org.osgi.service.http.port>8090</org.osgi.service.http.port>
+    <org.osgi.service.http.port.secure>8443</org.osgi.service.http.port.secure>
+    <org.apache.sling.commons.log.level>WARN</org.apache.sling.commons.log.level>
+    <org.osgi.framework.system.packages.extra>com.sun.org.apache.xalan.internal.res,com.sun.org.apache.xpath.internal.objects,com.sun.org.apache.xpath.internal.jaxp,com.sun.org.apache.xml.internal.utils,com.sun.org.apache.xpath.internal</org.osgi.framework.system.packages.extra>
+    <org.osgi.framework.bootdelegation>sun.*,com.sun.*</org.osgi.framework.bootdelegation>
+    <!-- versions -->
+    <gather-sling.version>1.0-SNAPSHOT</gather-sling.version>
+    <gather-commons.version>1.0-SNAPSHOT</gather-commons.version>
+    <gather-camel.version>1.0-SNAPSHOT</gather-camel.version>
+    <gather-archiver.version>1.0-SNAPSHOT</gather-archiver.version>
+    <gather-forms.version>1.0-SNAPSHOT</gather-forms.version>
+    <gather-alert.version>1.0-SNAPSHOT</gather-alert.version>
+    <gather-data.version>1.0-SNAPSHOT</gather-data.version>
+    <apache-camel.version>2.0.0</apache-camel.version>
+    <sling-framework.version>2.0.5-SNAPSHOT</sling-framework.version>
+    <groovy.version>1.7-beta-1</groovy.version>
+    <commons-lang.version>2.4</commons-lang.version>
+    <commons-io.version>1.4</commons-io.version>
+    <junit.version>4.5</junit.version>
+    <hamcrest.version>1.1</hamcrest.version>
+    <easymock.version>2.3.0</easymock.version>
+  </properties>
+
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>poms</module>
+    <module>provision</module>
+    <module>org.gatherdata.app.sling.common.content</module>
+    <module>org.gatherdata.app.sling.sample.resource</module>
+    <module>javax.servlet.jstl</module>
+    <module>org.gatherdata.app.sling.features</module>
+    <module>org.gatherdata.app.sling.rprtp</module>
+    <module>javax.jcr</module>
+    <module>sling-sandbox</module>
+    <module>sling-sandbox-too</module>
+    <module>capp-sandbox</module>
+    <module>org.gatherdata.app.sling.resource.core</module>
+    <module>org.gatherdata.app.sling.resource.archiver</module>
+    <module>org.gatherdata.app.sling.resource.forms</module>
+    <module>org.gatherdata.app.sling.resource.alert</module>
+    <module>org.gatherdata.app.sling.resource.orbeon</module>
+    <module>org.gatherdata.app.sling.resource.rosa</module>
+    <module>org.gatherdata.app.sling.gwt.example</module>
+    <module>org.gatherdata.app.sling.gwt.smartgwt</module>
+    <module>org.gatherdata.app.sling.gwt.archiver</module>
+    <module>org.gatherdata.app.sling.gwt.alert</module>
+    <module>org.gatherdata.app.sling.gwt.forms</module>
+    <module>org.gatherdata.app.sling.config</module>
+  </modules>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.ops4j</groupId>
+        <artifactId>maven-pax-plugin</artifactId>
+        <version>1.4</version>
+        <configuration>
+          <framework>felix</framework>
+          <profiles>web,obr</profiles>
+          <!-- noDependencies=true to force all deployabled bundles to be part of a feature -->
+          <noDependencies>true</noDependencies>
+          <provision>
+            <!-- gather-commons and dependencies -->
+            <!-- param>scan-features:mvn:org.gatherdata.gather-commons/org.gatherdata.commons.features/${gather-commons.version}/xml/features!/neo4j-dependencies</param -->
+            <!-- param>scan-features:mvn:org.neo4j.apoc-bundle/org.neo4j.neo.karaf/1.0-SNAPSHOT/xml/features!/neo4j-meta</param -->
+            <!-- param>scan-features:mvn:org.gatherdata.gather-commons/org.gatherdata.commons.features/${gather-commons.version}/xml/features!/neo4j-service</param -->
+            <param>scan-features:mvn:org.gatherdata.gather-commons/org.gatherdata.commons.features/${gather-commons.version}/xml/features!/gather-core</param>
+            <param>scan-features:mvn:org.gatherdata.gather-commons/org.gatherdata.commons.features/${gather-commons.version}/xml/features!/gather-commons.db4o</param>
+            <param>scan-features:mvn:org.gatherdata.gather-commons/org.gatherdata.commons.features/${gather-commons.version}/xml/features!/eclipselink,gather-hsqldb</param>
+            <!-- gather-archiver and dependencies -->
+            <param>scan-features:mvn:org.gatherdata.gather-archiver/org.gatherdata.archiver.features/${gather-archiver.version}/xml/features!/gather-archiver.db4o</param>
+            <!-- gather-alert and dependencies -->
+            <param>scan-features:mvn:org.gatherdata.gather-alert/org.gatherdata.alert.features/${gather-alert.version}/xml/features!/gather-alert.all</param>
+            <!-- gather-forms and dependencies -->
+            <param>scan-features:mvn:org.gatherdata.gather-forms/org.gatherdata.forms.features/${gather-forms.version}/xml/features!/gather-forms.db4o</param>
+            <!-- gather-data and dependencies -->
+            <param>scan-features:mvn:org.gatherdata.gather-data/org.gatherdata.data.features/${gather-data.version}/xml/features!/gather-data.jpa</param>
+            <param>scan-features:mvn:org.gatherdata.gather-data/org.gatherdata.data.features/${gather-data.version}/xml/features!/gather-data.felix</param>
+            <!-- gather-camel and dependencies -->
+            <param>scan-features:mvn:org.apache.camel.karaf/features/${apache-camel.version}/xml/features!/camel-osgi</param>
+            <param>scan-features:mvn:org.gatherdata.gather-camel/org.gatherdata.camel.features/${gather-camel.version}/xml/features!/gather-camel,gather-camel.example</param>
+            <!-- gather-sling dependencies -->
+            <param>scan-features:mvn:org.gatherdata.app.gather-sling/org.gatherdata.app.sling.features/1.0-SNAPSHOT/xml/features!/sling-dependencies@1</param>
+            <param>scan-features:mvn:org.gatherdata.app.gather-sling/org.gatherdata.app.sling.features/1.0-SNAPSHOT/xml/features!/sling-felix@2</param>
+            <param>scan-features:mvn:org.gatherdata.app.gather-sling/org.gatherdata.app.sling.features/1.0-SNAPSHOT/xml/features!/sling-framework</param>
+            <param>mvn:org.ops4j.pax.confman/pax-confman-propsloader/0.2.2</param>
+            <param>mvn:org.springframework/org.springframework.web.servlet/2.5.6</param>
+            <!-- extras for test and debugging -->
+            <param>mvn:org.gatherdata.gather-archiver/org.gatherdata.archiver.command/${gather-archiver.version}</param>
+            <param>mvn:org.gatherdata.gather-forms/org.gatherdata.forms.command/${gather-forms.version}</param>
+            <param>mvn:org.gatherdata.gather-alert/org.gatherdata.alert.builder/${gather-alert.version}</param>
+            <param>mvn:org.gatherdata.gather-alert/org.gatherdata.alert.command/${gather-alert.version}</param>
+          </provision>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <repositories>
+      <repository>
+          <id>ops4j-releases</id>
+          <name>OPS4J Releases</name>
+          <url>http://repository.ops4j.org/mvn-releases</url>
+          <releases>
+              <enabled>true</enabled>
+          </releases>
+          <snapshots>
+              <enabled>false</enabled>
+          </snapshots>
+      </repository>
+      <repository>
+          <id>ops4j-snapshot</id>
+          <name>OPS4J Snapshots</name>
+          <url>http://repository.ops4j.org/mvn-snapshots</url>
+          <releases>
+              <enabled>false</enabled>
+          </releases>
+          <snapshots>
+              <enabled>true</enabled>
+          </snapshots>
+      </repository>
+      <repository>
+          <id>Apache Snapshots</id>
+          <url>https://repository.apache.org/content/repositories/snapshots</url>
+          <snapshots>
+              <enabled>true</enabled>
+          </snapshots>
+      </repository>
+      <repository>
+          <id>Codehaus Snapshots</id>
+          <url>http://snapshots.repository.codehaus.org/</url>
+          <snapshots>
+              <enabled>true</enabled>
+          </snapshots>
+      </repository>
+      <repository>
+          <id>com.springsource.repository.bundles.release</id>
+          <name>SpringSource Enterprise Bundle Repository - SpringSource Bundle Releases</name>
+          <url>http://repository.springsource.com/maven/bundles/release</url>
+      </repository>
+      <repository>
+          <id>com.springsource.repository.bundles.external</id>
+          <name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>
+          <url>http://repository.springsource.com/maven/bundles/external</url>
+      </repository>
+      <repository>
+          <id>eclipselink.snapshots</id>
+          <name>EclipseLink Snapshots</name>
+          <url>http://spout.ussg.indiana.edu/eclipse/rt/eclipselink/maven.repo/</url>
+      </repository>
+
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>Apache Snapshots</id>
+      <url>https://repository.apache.org/content/repositories/snapshots</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <distributionManagement>
+    <!-- 
+          NOTE: this uses an internal server run by Andreas Kollegger
+          which is ~not~ available on the Internet. 
+      -->
+    <repository>
+      <id>tembo.releases</id>
+      <name>Tembo Internal Releases</name>
+      <url>http://fatty-server.local.:8081/nexus/content/repositories/releases</url>
+    </repository>
+    <snapshotRepository>
+      <id>tembo.snapshots</id>
+      <name>Tembo Internal Snapshots</name>
+      <url>http://fatty-server.local.:8081/nexus/content/repositories/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+</project>

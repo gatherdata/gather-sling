@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>GATHER<%=currentNode.title ? " - " + currentNode.title : ""%></title>
+        
+        <!-- Blueprint CSS -->
+        <link rel="stylesheet" href="/css/blueprint/reset.css" type="text/css" media="screen, projection" />
+        <link rel="stylesheet" href="/css/blueprint/typography.css" type="text/css" media="screen, projection" />
+        <link rel="stylesheet" href="/css/blueprint/plugins/fancy-type/screen.css" type="text/css" media="screen, projection" />
+        <!--[if lt IE 8]><link rel="stylesheet" href="/css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+        
+        <link rel="stylesheet" href="/css/superfish/superfish.css" />
+        
+        <!-- Gather CSS -->
+        <link rel="stylesheet" href="/css/gather/screen.css" type="text/css" media="screen, projection"/>
+        
+        <% if (currentNode.hasNode("css")) sling.include("css"); %>
+
+        <!-- jQuery JavaScript Framework -->
+        <script type="text/javascript" src="/js/jquery-1.3.2.js"></script>
+        <script type="text/javascript" src="/js/superfish-1.4.8.js"></script>      
+        <script type="text/javascript">
+            // jQuery main...                                     
+            $(document).ready(function() {
+                
+                // create the superfish menu
+                $('ul.sf-menu').superfish(); 
+
+                // load page-specific jquery code
+                <%
+                    if (currentNode.hasProperty("jquery")) {
+                        out.println(currentNode.getProperty("jquery"));
+                    }
+                %>
+            });
+        </script>                                                               
+
+    </head>
+
+    <body>
+        <div class="container">
+            <div id="header" class="span-24 last">
+                <% sling.include('/etc/menu.superfish.html'); %>
+            </div>
+            <div id="content" class="span-24 last">
+                            <%
+                %>
+                <%
+                    externalUrl = null;
+                    
+                    if (currentNode.hasProperty("extUrl")) {
+                        externalUrl = currentNode.getProperty("extUrl").getString();
+                    } else if (currentNode.hasProperty("extBaseUrlKey")) {
+                        if (currentNode.hasProperty("extPath")) {
+                            configService = sling.getService(Packages.org.gatherdata.app.sling.config.GatherSlingConfiguration);
+                            extBaseUrl = configService.get(currentNode.getProperty("extBaseUrlKey").getString());
+                            extPath = currentNode.getProperty("extPath").getString();
+                            externalUrl = extBaseUrl + extPath;
+                        }
+                    }
+                %>
+                <%
+                    if (externalUrl) {
+                    %>
+                        <iframe src ="<%= externalUrl %>" width="100%" height="100%">
+                            <p>Your browser does not support iframes.</p>
+                        </iframe>
+                    <%
+                    } else {
+                        out.println("<p>This page intentionally left blank.</p>");
+                    }
+                %>
+            </div >
+            <div id="footer" class="span-24 last">
+                <p class="quiet">GATHER &copy; 20009 AED</p>
+            </div>
+        </div>
+
+    </body>
+</html>

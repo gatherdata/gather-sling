@@ -1,0 +1,38 @@
+{
+	"title":"gather - transform - report",
+	"jcr:primaryType":"nt:unstructured",
+    "sling:resourceType":"gather/BluePrintPage",
+	"content":"content.html",
+    "pubforms":{
+        "title":"Published Forms",
+        "jcr:primaryType":"nt:unstructured",
+        "sling:resourceType":"gather/GwtPage",
+        "gwtApp":"/gather/gwt/forms/Application.html"
+    },
+    "formBuilder":{
+        "title":"Form Builder",
+        "jcr:primaryType":"nt:unstructured",
+        "sling:resourceType":"gather/ExternalPage",
+        "extBaseUrlKey":"gather.sling.orbeon.url", // property name from org.gatherdata.app.sling.properties
+        "extPath":"fr/orbeon/builder/"
+    },
+    "alerts":{
+        "title":"Alerts",
+        "jcr:primaryType":"nt:unstructured",
+        "sling:resourceType":"gather/GwtPage",
+        "gwtApp":"/gather/gwt/alerts/Application.html"
+    },
+	"archiver":{
+        "title":"Data Archive",
+        "jcr:primaryType":"nt:unstructured",
+        "sling:resourceType":"gather/GwtPage",
+        "gwtApp":"/gather/gwt/archiver/Application.html"
+    },
+    "pentaho":{
+        "title":"Pentaho",
+        "jcr:primaryType":"nt:unstructured",
+        "sling:resourceType":"gather/ExternalPage",
+        "extBaseUrlKey":"gather.sling.pentaho.url", // property name from org.gatherdata.app.sling.properties
+        "extPath":""
+    }
+}

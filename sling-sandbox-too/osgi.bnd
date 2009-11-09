@@ -1,0 +1,4 @@
+#-----------------------------------------------------------------
+# Use this file to add customized Bnd instructions for the bundle
+#-----------------------------------------------------------------
+Sling-Initial-Content: SLING-INF/content;uninstall:=true

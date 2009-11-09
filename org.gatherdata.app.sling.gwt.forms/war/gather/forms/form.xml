@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<response>
+  <status>0</status>
+  <startRow>0</startRow>
+  <data>
+    <record>
+        <uid>http://gatherdata.org/mock/1</uid>
+        <title>Mock - 1</title>
+        <dateModified>2009-10-15T15:19:25.747-04:00</dateModified>
+        <application>mock</application>
+        <style>rosa</style>
+        <name>1</name>
+        <path>/mock/1</path>
+        <dateCreated>2009-10-15T15:19:25.747-04:00</dateCreated>
+        <type>text/xml</type>
+    </record>
+    <record>
+        <uid>http://gatherdata.org/mock/0</uid>
+        <title>Mock - 0</title>
+        <dateModified>2009-10-15T15:19:23.760-04:00</dateModified>
+        <application>mock</application>
+        <style>rosa</style>
+        <name>0</name>
+        <path>/mock/0</path>
+        <dateCreated>2009-10-15T15:19:23.760-04:00</dateCreated>
+        <type>text/xml</type>
+    </record>
+  </data>
+  <endRow>2</endRow>
+  <totalRows>2</totalRows>
+</response>

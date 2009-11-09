@@ -1,0 +1,72 @@
+{
+    "title":"Sandbox",
+    "jcr:primaryType":"nt:unstructured",
+    "sling:resourceType":"gather/sandbox/link",
+    "url":"/sandbox",
+    "blueprint":{
+        "jcr:primaryType":"nt:unstructured",
+        "sling:resourceType":"gather/sandbox/link",
+        "title":"Blueprint",
+        "url":"/sandbox/pages/blueprint.html",
+		"forms":{
+			"jcr:primaryType":"nt:unstructured",
+			"sling:resourceType":"gather/sandbox/link",
+			"title":"Forms",
+			"url":"/sandbox/pages/blueprint/forms.html"
+		},
+		"grid":{
+			"jcr:primaryType":"nt:unstructured",
+			"sling:resourceType":"gather/sandbox/link",
+			"title":"Grid",
+			"url":"/sandbox/pages/blueprint/grid.html"
+		},
+		"simple":{
+			"jcr:primaryType":"nt:unstructured",
+			"sling:resourceType":"gather/sandbox/link",
+			"title":"Simple",
+			"url":"/sandbox/pages/blueprint/simple.html"
+		},
+		"typography":{
+			"jcr:primaryType":"nt:unstructured",
+			"sling:resourceType":"gather/sandbox/link",
+			"title":"Typography",
+			"url":"/sandbox/pages/blueprint/typography.html"
+		}
+    },
+	"jquery":{
+		"jcr:primaryType":"nt:unstructured",
+		"sling:resourceType":"gather/sandbox/link",
+		"title":"jQuery",
+		"url":"/sandbox/pages/jquery/index.html",
+		"demo":{
+			"jcr:primaryType":"nt:unstructured",
+			"sling:resourceType":"gather/sandbox/link",
+			"title":"jQuery UI Demo",
+			"url":"/sandbox/pages/jquery/demo.html",			
+		},
+		"jqgrid":{
+			"jcr:primaryType":"nt:unstructured",
+			"sling:resourceType":"gather/sandbox/link",
+			"title":"jqGrid Demo",
+			"url":"/sandbox/pages/jquery/jqGridDemo/jqgrid.html",			
+		},
+		"bluegrid":{
+			"jcr:primaryType":"nt:unstructured",
+			"sling:resourceType":"gather/sandbox/link",
+			"title":"Blueprinted jqGrid",
+			"url":"/sandbox/pages/jquery/bluegrid.html",			
+		},
+        "buttons":{
+            "jcr:primaryType":"nt:unstructured",
+            "sling:resourceType":"gather/sandbox/link",
+            "title":"jQuery Buttons",
+            "url":"/sandbox/pages/jquery/buttons.html",           
+        }
+	},
+	"login":{
+		"jcr:primaryType":"nt:unstructured",
+		"sling:resourceType":"gather/sandbox/link",
+		"title":"login",
+		"url":"/sandbox/pages/login.html"	
+	}
+}

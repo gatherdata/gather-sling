@@ -1,0 +1,14 @@
+{
+    "orbeon":{
+        "title":"Orbeon Forms",
+        "jcr:primaryType":"nt:unstructured",
+        "sling:resourceType":"gather/link",
+        "url":"http://localhost:8091/orbeon/"
+    },
+    "pentaho":{
+        "title":"Pentaho Reports",
+        "jcr:primaryType":"nt:unstructured",
+        "sling:resourceType":"gather/link",
+        "url":"http://localhost:8080/pentaho/"
+    }	
+}
