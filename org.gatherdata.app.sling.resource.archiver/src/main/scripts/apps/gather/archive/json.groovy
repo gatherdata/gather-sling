@@ -19,8 +19,10 @@ json.object();
 	json.key("content").value(archive.getContent().toString());
 	json.key("metadata")
 		.array();
-			archive.getMetadata().each { key, value ->
-			     json.key(key).value(value);
-			}
+		archive.getMetadata().each { key, value ->
+        	json.object();
+			json.key(key).value(value);
+			json.endObject();
+		}
 	json.endArray();
 json.endObject();
