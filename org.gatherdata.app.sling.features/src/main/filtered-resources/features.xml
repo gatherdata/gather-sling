@@ -1,77 +1,93 @@
-<features>
+<features name="gather-sling ${gather-sling.version}">
 
-    <feature name="sling-dependencies" version="${sling-framework.version}">
-        <bundle>mvn:org.apache.felix/org.apache.felix.configadmin/1.2.4</bundle>
-        <bundle>mvn:org.apache.felix/org.apache.felix.bundlerepository/1.4.1</bundle>
+  <feature name="sling-dependencies" version="${sling-framework.version}">
+    <bundle>mvn:org.apache.geronimo.specs/geronimo-jta_1.1_spec/1.1.1</bundle>
+    <bundle>mvn:commons-collections/commons-collections/${commons-collections.version}</bundle>
+    <bundle>mvn:commons-io/commons-io/${commons-io.version}</bundle>
+    <bundle>mvn:commons-lang/commons-lang/${commons-lang.version}</bundle>
+    <bundle>mvn:${codehaus.release.repository}!org.codehaus.groovy/groovy-all/${groovy.version}</bundle>
+  </feature>
 
-        <bundle>mvn:org.gatherdata.app.gather-sling/javax.jcr/1.0-001</bundle>
-        <bundle>mvn:${codehaus.release.repository}!org.codehaus.groovy/groovy-all/${groovy.version}</bundle>
+  <feature name="sling-felix" version="${sling-framework.version}">
+    <!-- duplicates from gather-commons felix-services -->
+    <bundle>mvn:org.apache.felix/org.apache.felix.bundlerepository/1.4.2</bundle>
+    <bundle>mvn:org.apache.felix/org.apache.felix.configadmin/1.2.4</bundle>
+    <bundle>mvn:org.apache.felix/org.apache.felix.eventadmin/1.0.0</bundle>
+    <bundle>mvn:org.apache.felix/org.apache.felix.fileinstall/2.0.4</bundle>
+    <bundle>mvn:org.apache.felix/org.apache.felix.scr/1.4.0</bundle>
+    <bundle>mvn:org.apache.felix/org.apache.felix.metatype/1.0.4</bundle>
+    <bundle>mvn:org.ops4j.pax.logging/pax-logging-api/1.4</bundle>
+    <bundle>mvn:org.ops4j.pax.logging/pax-logging-service/1.4</bundle>
+    <!-- end of duplicates -->
+    <bundle>mvn:org.ops4j.pax.web/pax-web-jetty-bundle/0.7.2</bundle>
+    <bundle>mvn:org.apache.felix/org.apache.felix.webconsole/2.0.6</bundle>
+    <bundle>mvn:org.apache.felix/org.apache.felix.http.whiteboard/2.0.4</bundle>
+  </feature>
 
-        <bundle>mvn:${apache.snapshot.repository}!org.apache.sling/org.apache.sling.commons.json/2.0.5-SNAPSHOT</bundle>	
-        <bundle>mvn:${apache.snapshot.repository}!org.apache.sling/org.apache.sling.extensions.threaddump/0.1.3-SNAPSHOT</bundle>
-        <bundle>mvn:${apache.release.repository}!org.apache.sling/org.apache.sling.commons.classloader/1.0.0</bundle>	
-    </feature>
+  <feature name="apache-sling" version="6-SNAPSHOT">
+    <bundle>mvn:org.apache.sling/org.apache.sling.commons.osgi/2.0.5-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.sling/org.apache.sling.commons.mime/2.1.0-incubator</bundle>
+    <bundle>mvn:org.apache.sling/org.apache.sling.commons.classloader/1.1.3-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.sling/org.apache.sling.api/2.0.8</bundle>
+    <bundle>mvn:org.apache.sling/org.apache.sling.commons.auth/0.9.0-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.sling/org.apache.sling.engine/2.0.7-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.sling/org.apache.sling.systemstatus/0.9.0-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.sling/org.apache.sling.httpauth/2.0.5-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.sling/org.apache.sling.openidauth/0.9.1-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.sling/org.apache.sling.adapter/2.0.4</bundle>
+    <bundle>mvn:org.apache.sling/org.apache.sling.servlets.resolver/2.0.8</bundle>
+    <bundle>mvn:org.apache.sling/org.apache.sling.servlets.get/2.0.9-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.sling/org.apache.sling.servlets.post/2.0.5-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.sling/org.apache.sling.jcr.contentloader/2.0.5-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.sling/org.apache.sling.jcr.resource/2.0.7-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.sling/org.apache.sling.jcr.ocm/2.0.4-incubator</bundle>
+    <bundle>mvn:org.apache.sling/org.apache.sling.jcr.classloader/3.0.0</bundle>
+    <bundle>mvn:org.apache.sling/org.apache.sling.bundleresource.impl/2.0.4-incubator</bundle>
+    <bundle>mvn:org.apache.sling/org.apache.sling.fsresource/0.9.2-incubator</bundle>
+    <bundle>mvn:org.apache.sling/org.apache.sling.scripting.api/2.1.0-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.sling/org.apache.sling.scripting.core/2.0.9-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.sling/org.apache.sling.scripting.javascript/2.0.6</bundle>
+    <bundle>mvn:org.apache.sling/org.apache.sling.scripting.jsp/2.0.9-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.sling/org.apache.sling.scripting.jsp.taglib/2.0.7-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.sling/org.apache.sling.commons.log/2.0.7-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.sling/org.apache.sling.commons.json/2.0.5-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.sling/org.apache.sling.extensions.threaddump/0.1.2-incubator</bundle>
+    <bundle>mvn:org.apache.sling/org.apache.sling.jcr.webconsole/1.0.0-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.sling/org.apache.sling.extensions.groovy/1.0.0-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.sling/org.apache.sling.jcr.api/2.0.2-incubator</bundle>
+    <bundle>mvn:org.apache.sling/org.apache.sling.jcr.base/2.0.5-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.jackrabbit/jackrabbit-api/1.6.0</bundle>
+    <bundle>mvn:org.apache.sling/org.apache.sling.jcr.jackrabbit.server/2.0.5-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.sling/org.apache.sling.jcr.jackrabbit.usermanager/2.0.3-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.sling/org.apache.sling.jcr.jackrabbit.accessmanager/2.0.3-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.jackrabbit/jackrabbit-jcr-commons/1.6.0</bundle>
+    <bundle>mvn:org.apache.sling/org.apache.sling.jcr.webdav/2.0.6-incubator</bundle>
+  </feature>
 
-    <feature name="sling-felix" version="${sling-framework.version}">
-        <bundle>mvn:org.apache.felix/org.apache.felix.eventadmin/1.0.0</bundle>
-        <bundle>mvn:org.apache.felix/org.apache.felix.scr/1.0.8</bundle>
-        <bundle>mvn:org.apache.felix/org.apache.felix.metatype/1.0.4</bundle>
-        <bundle>mvn:org.apache.felix/org.apache.felix.webconsole/2.0.0</bundle>	
-    </feature>
+  <feature name="gather-sling" version="${gather-sling.version}">
+    <feature>apache-sling</feature>
+    <bundle>mvn:org.gatherdata.app.gather-sling/javax.servlet.jstl/1.2-001-SNAPSHOT</bundle>
+    <bundle>mvn:org.gatherdata.app.gather-sling/org.gatherdata.app.sling.rprtp/${gather-sling.version}</bundle>
+    <bundle>mvn:org.gatherdata.app.gather-sling/org.gatherdata.app.sling.common.content/${gather-sling.version}</bundle>
+    <bundle>mvn:org.gatherdata.app.gather-sling/org.gatherdata.app.sling.resource.core/${gather-sling.version}</bundle>
+    <bundle>mvn:org.gatherdata.app.gather-sling/org.gatherdata.app.sling.resource.forms/${gather-sling.version}</bundle>
+    <bundle>mvn:org.gatherdata.app.gather-sling/org.gatherdata.app.sling.gwt.forms/${gather-sling.version}</bundle>
+    <bundle>mvn:org.gatherdata.app.gather-sling/org.gatherdata.app.sling.resource.orbeon/${gather-sling.version}</bundle>
+    <bundle>mvn:org.gatherdata.app.gather-sling/org.gatherdata.app.sling.resource.rosa/${gather-sling.version}</bundle>
+    <bundle>mvn:org.gatherdata.app.gather-sling/org.gatherdata.app.sling.config/${gather-sling.version}</bundle>
+    <bundle>mvn:org.gatherdata.app.gather-sling/org.gatherdata.app.sling.webconsolebranding/${gather-sling.version}</bundle>
+  </feature>
 
-    <feature name="sling-framework" version="${sling-framework.version}">
-        <bundle>mvn:commons-collections/commons-collections/3.2.1</bundle>
-        <bundle>mvn:commons-io/commons-io/${commons-io.version}</bundle>
-        <bundle>mvn:commons-lang/commons-lang/${commons-lang.version}</bundle>
-    
-        <bundle>mvn:${apache.release.repository}!org.apache.jackrabbit/jackrabbit-api/1.6.0</bundle>
-        <bundle>mvn:${apache.snapshot.repository}!org.apache.sling/org.apache.sling.jcr.jackrabbit.server/2.0.5-SNAPSHOT</bundle>
-        <bundle>mvn:${apache.snapshot.repository}!org.apache.sling/org.apache.sling.jcr.jackrabbit.accessmanager/2.0.3-SNAPSHOT</bundle>
-        <bundle>mvn:${apache.snapshot.repository}!org.apache.sling/org.apache.sling.jcr.jackrabbit.usermanager/2.0.3-SNAPSHOT</bundle>
-        <bundle>mvn:${apache.release.repository}!org.apache.jackrabbit/jackrabbit-jcr-commons/1.6.0</bundle>
-        <bundle>mvn:${apache.snapshot.repository}!org.apache.sling/org.apache.sling.jcr.webdav/2.0.7-SNAPSHOT</bundle>
-        <bundle>mvn:${apache.snapshot.repository}!org.apache.sling/org.apache.sling.commons.osgi/2.0.5-SNAPSHOT</bundle>
-        <bundle>mvn:${apache.snapshot.repository}!org.apache.sling/org.apache.sling.commons.mime/2.1.1-SNAPSHOT</bundle>
-        <bundle>mvn:${apache.release.repository}!org.apache.sling/org.apache.sling.commons.html/0.9.0</bundle>
-        <!-- bundle>mvn:${apache.release.repository}!org.apache.jackrabbit/jackrabbit-classloader/1.5.0</bundle-->
-        <bundle>mvn:${apache.release.repository}!org.apache.sling/org.apache.sling.adapter/2.0.4</bundle>
-        <bundle>mvn:${apache.release.repository}!org.apache.sling/org.apache.sling.api/2.0.8</bundle>
-        <bundle>mvn:${apache.release.repository}!org.apache.sling/org.apache.sling.jcr.api/2.0.5-SNAPSHOT</bundle>
-        <bundle>mvn:${apache.snapshot.repository}!org.apache.sling/org.apache.sling.jcr.base/2.0.5-SNAPSHOT</bundle>
-        <bundle>mvn:${apache.snapshot.repository}!org.apache.sling/org.apache.sling.bundleresource.impl/2.0.5-SNAPSHOT</bundle>
-        <bundle>mvn:${apache.snapshot.repository}!org.apache.sling/org.apache.sling.fsresource/0.9.3-SNAPSHOT</bundle>
-        <bundle>mvn:${apache.release.repository}!org.apache.sling/org.apache.sling.engine/2.0.6</bundle>
-        <bundle>mvn:${apache.snapshot.repository}!org.apache.sling/org.apache.sling.httpauth/2.0.5-SNAPSHOT</bundle>
-        <bundle>mvn:${apache.release.repository}!org.apache.sling/org.apache.sling.jcr.classloader/2.0.6</bundle>
-        <bundle>mvn:${apache.snapshot.repository}!org.apache.sling/org.apache.sling.jcr.contentloader/2.0.5-SNAPSHOT</bundle>
-        <bundle>mvn:${apache.snapshot.repository}!org.apache.sling/org.apache.sling.jcr.ocm/2.0.5-SNAPSHOT</bundle>
-        <bundle>mvn:${apache.release.repository}!org.apache.sling/org.apache.sling.jcr.resource/2.0.6</bundle>
-        <bundle>mvn:${apache.release.repository}!org.apache.sling/org.apache.sling.servlets.get/2.0.6</bundle>
-        <bundle>mvn:${apache.snapshot.repository}!org.apache.sling/org.apache.sling.servlets.post/2.0.5-SNAPSHOT</bundle>
-        <bundle>mvn:${apache.release.repository}!org.apache.sling/org.apache.sling.servlets.resolver/2.0.8</bundle>
-        <bundle>mvn:${apache.snapshot.repository}!org.apache.sling/org.apache.sling.scripting.api/2.0.3-SNAPSHOT</bundle>
-        <bundle>mvn:${apache.release.repository}!org.apache.sling/org.apache.sling.scripting.core/2.0.6</bundle>
-        <bundle>mvn:${apache.snapshot.repository}!org.apache.sling/org.apache.sling.scripting.javascript/2.0.5-SNAPSHOT</bundle>
-        <bundle>mvn:${apache.snapshot.repository}!org.apache.sling/org.apache.sling.scripting.jsp/2.0.7-SNAPSHOT</bundle>
-        <bundle>mvn:${apache.snapshot.repository}!org.apache.sling/org.apache.sling.scripting.jsp.taglib/2.0.5-SNAPSHOT</bundle>
-        <bundle>mvn:${apache.snapshot.repository}!org.apache.sling/org.apache.sling.systemstatus/0.9.0-SNAPSHOT</bundle>
-        <bundle>mvn:org.gatherdata.app.gather-sling/javax.servlet.jstl/1.2-001-SNAPSHOT</bundle>
-    </feature>
-    <feature name="gather-sling" version="${gather-sling.version}">
-        <feature>sling-framework</feature>
-        <feature>gather-commons-dependencies</feature>
-        <bundle>mvn:org.gatherdata.app.gather-sling/org.gatherdata.app.sling.rprtp/${gather-sling.version}</bundle>
-        <bundle>mvn:org.gatherdata.app.gather-sling/org.gatherdata.app.sling.common.content/${gather-sling.version}</bundle>
-        <bundle>mvn:org.gatherdata.app.gather-sling/org.gatherdata.app.sling.resource.core/${gather-sling.version}</bundle>
-        <bundle>mvn:org.gatherdata.app.gather-sling/org.gatherdata.app.sling.resource.archiver/${gather-sling.version}</bundle>
-        <bundle>mvn:org.gatherdata.app.gather-sling/org.gatherdata.app.sling.resource.forms/${gather-sling.version}</bundle>
-        <bundle>mvn:org.gatherdata.app.gather-sling/org.gatherdata.app.sling.resource.alert/${gather-sling.version}</bundle>
-        <bundle>mvn:org.gatherdata.app.gather-sling/org.gatherdata.app.sling.resource.orbeon/${gather-sling.version}</bundle>
-        <bundle>mvn:org.gatherdata.app.gather-sling/org.gatherdata.app.sling.resource.rosa/${gather-sling.version}</bundle>
-        <bundle>mvn:org.gatherdata.app.gather-sling/org.gatherdata.app.sling.gwt.archiver/${gather-sling.version}</bundle>
-        <bundle>mvn:org.gatherdata.app.gather-sling/org.gatherdata.app.sling.gwt.alert/${gather-sling.version}</bundle>
-        <bundle>mvn:org.gatherdata.app.gather-sling/org.gatherdata.app.sling.gwt.forms/${gather-sling.version}</bundle>
-        <bundle>mvn:org.gatherdata.app.gather-sling/org.gatherdata.app.sling.config/${gather-sling.version}</bundle>
+  <feature name="gather-archiver-sling" version="${gather-sling.version}">
+    <feature>gather-sling</feature>
+    <bundle>mvn:org.gatherdata.app.gather-sling/org.gatherdata.app.sling.resource.archiver/${gather-sling.version}</bundle>
+    <bundle>mvn:org.gatherdata.app.gather-sling/org.gatherdata.app.sling.gwt.archiver/${gather-sling.version}</bundle>
+  </feature>
 
-    </feature>
+  <feature name="gather-alert-sling" version="${gather-sling.version}">
+    <feature>gather-sling</feature>
+    <bundle>mvn:org.gatherdata.app.gather-sling/org.gatherdata.app.sling.resource.alert/${gather-sling.version}</bundle>
+    <bundle>mvn:org.gatherdata.app.gather-sling/org.gatherdata.app.sling.gwt.alert/${gather-sling.version}</bundle>
+  </feature>
+
 </features>

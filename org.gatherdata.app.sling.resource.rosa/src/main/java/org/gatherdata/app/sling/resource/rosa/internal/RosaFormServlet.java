@@ -89,6 +89,7 @@ public class RosaFormServlet extends SlingAllMethodsServlet implements OptingSer
                 log.debug("sending contents of " + rosaResource);
                 os.print((String) rosaResource.getForm().getFormTemplate());
             } else {
+            	log.debug("RosaFormResource doe not exist.");
                 response.sendError(HttpServletResponse.SC_NOT_FOUND);
             }
         }

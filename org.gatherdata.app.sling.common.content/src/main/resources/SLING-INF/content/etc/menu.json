@@ -2,7 +2,7 @@
 	"jcr:primaryType":"nt:unstructured",
 	"sling:resourceType":"gather/collection",
 	"prepare":{
-        "title":"Prepare",
+        "title":"Forms",
         "jcr:primaryType":"nt:unstructured",
         "sling:resourceType":"gather/link",
         "url":"/gather/formBuilder.html",
@@ -29,7 +29,7 @@
         "title":"Data",
         "jcr:primaryType":"nt:unstructured",
         "sling:resourceType":"gather/link",
-        "url":"/gather/archiver/status",
+        "url":"/gather/archiver.html",
         "archives":{
             "title":"Archival Data",
             "jcr:primaryType":"nt:unstructured",
@@ -57,8 +57,20 @@
         "bundles":{
             "jcr:primaryType":"nt:unstructured",
             "sling:resourceType":"gather/link",
-            "title":"Web Management Console - Bundles",
+            "title":"Karaf Console",
             "url":"/system/console"
+        },
+        "tomcat":{
+            "jcr:primaryType":"nt:unstructured",
+            "sling:resourceType":"gather/link",
+            "title":"Tomcat Management",
+            "url":"/manager/html"
+        },
+        "phpmyadmin":{
+            "jcr:primaryType":"nt:unstructured",
+            "sling:resourceType":"gather/link",
+            "title":"phpMyAdmin",
+            "url":"/phpmyadmin"
         }
     }
 }

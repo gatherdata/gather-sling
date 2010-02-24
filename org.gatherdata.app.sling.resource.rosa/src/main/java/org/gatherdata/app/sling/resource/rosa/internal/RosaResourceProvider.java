@@ -33,27 +33,21 @@ public class RosaResourceProvider implements ResourceProvider {
     public static final String[] RESOURCE_TYPES = new String[] { RosaFormResource.RESOURCE_TYPE };
 
     /**
-     * URL pattern for individual form templates...
-     * 
-     * /forms/[APPLICATION]/[FORM_NAME].xml
+     * URL pattern for individual form templates: PROVIDER_ROOT + /forms/[APPLICATION]/[FORM_NAME]
      * 
      */
-    private final Pattern FORM_URL_PATTERN = Pattern.compile("^" + PROVIDER_ROOT + "forms/(\\w*)/([\\w&&[^/.]]*)$");
+    public static final Pattern FORM_URL_PATTERN = Pattern.compile("^" + PROVIDER_ROOT + "forms/([\\w-]*)/([\\w-&&[^/.]]*)$");
 
     /**
-     * URL pattern for listing available forms...
-     * 
-     * /forms.xml
+     * URL pattern for listing available forms: PROVIDER_ROOT + /forms
      * 
      */
-    private final Pattern FORM_LIST_URL_PATTERN = Pattern.compile("^" + PROVIDER_ROOT + "forms$");
+    public static final Pattern FORM_LIST_URL_PATTERN = Pattern.compile("^" + PROVIDER_ROOT + "forms$");
 
     /**
-     * URL pattern for submitting form instance data
-     * 
-     * /data.xml
+     * URL pattern for submitting form instance data: PROVIDER_ROOT + /data
      */
-    private final Pattern POST_DATA_URL_PATTERN = Pattern.compile("^" + PROVIDER_ROOT + "data$");
+    public static final Pattern POST_DATA_URL_PATTERN = Pattern.compile("^" + PROVIDER_ROOT + "data$");
     
     @Inject
     FormCatalogService formCatalog;
