@@ -1,64 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+  xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
-    <parent>
-        <relativePath>../poms/compiled/</relativePath>
-        <groupId>org.gatherdata.app.gather-sling.build</groupId>
-        <artifactId>compiled-bundle-settings</artifactId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
+  <parent>
+    <relativePath>../poms/compiled/</relativePath>
+    <groupId>org.gatherdata.app.gather-sling.build</groupId>
+    <artifactId>compiled-bundle-settings</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
 
-    <properties>
-        <bundle.symbolicName>org.gatherdata.app.sling.rprtp</bundle.symbolicName>
-        <bundle.namespace>org.gatherdata.app.sling.rprtp</bundle.namespace>
-    </properties>
+  <properties>
+    <bundle.symbolicName>org.gatherdata.app.sling.rprtp</bundle.symbolicName>
+    <bundle.namespace>org.gatherdata.app.sling.rprtp</bundle.namespace>
+  </properties>
 
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>org.gatherdata.app.gather-sling</groupId>
-    <artifactId>org.gatherdata.app.sling.rprtp</artifactId>
-    <version>${gather-sling.version}</version>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.gatherdata.app.gather-sling</groupId>
+  <artifactId>org.gatherdata.app.sling.rprtp</artifactId>
+  <version>${gather-sling.version}</version>
 
-    <name>gather-sling - Resource Provider Resource Type Provider</name>
-    <description>A JCR ResourceTypeProvider which allows ResourceProviders to set a default resource type for nodes.</description>
+  <name>gather-sling - Resource Provider Resource Type Provider</name>
+  <description>A JCR ResourceTypeProvider which allows ResourceProviders to set a default resource type for nodes.</description>
 
-    <packaging>bundle</packaging>
+  <packaging>bundle</packaging>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>osgi_R4_core</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>osgi_R4_compendium</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.ops4j.pax.logging</groupId>
-            <artifactId>pax-logging-api</artifactId>
-        </dependency>
-        <dependency>
-          <groupId>org.gatherdata.app.gather-sling</groupId>
-          <artifactId>javax.jcr</artifactId>
-        </dependency>
-        <dependency>
-          <groupId>org.apache.sling</groupId>
-          <artifactId>org.apache.sling.jcr.resource</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.ops4j</groupId>
-            <artifactId>peaberry</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.servicemix.bundles</groupId>
-            <artifactId>org.apache.servicemix.bundles.aopalliance</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.google.inject</groupId>
-            <artifactId>guice</artifactId>
-        </dependency>
-    </dependencies>
+  <dependencies>
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>osgi_R4_core</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>osgi_R4_compendium</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.ops4j.pax.logging</groupId>
+      <artifactId>pax-logging-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>javax.jcr</groupId>
+      <artifactId>jcr</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.sling</groupId>
+      <artifactId>org.apache.sling.jcr.resource</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.sling</groupId>
+      <artifactId>org.apache.sling.api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.sling</groupId>
+      <artifactId>org.apache.sling.commons.osgi</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.ops4j</groupId>
+      <artifactId>peaberry</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.servicemix.bundles</groupId>
+      <artifactId>org.apache.servicemix.bundles.aopalliance</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.inject</groupId>
+      <artifactId>guice</artifactId>
+    </dependency>
+  </dependencies>
 
 </project>

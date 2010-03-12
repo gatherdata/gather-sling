@@ -50,8 +50,8 @@
             <artifactId>org.apache.sling.commons.osgi</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.gatherdata.app.gather-sling</groupId>
-            <artifactId>javax.jcr</artifactId>
+            <groupId>javax.jcr</groupId>
+            <artifactId>jcr</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.felix</groupId>

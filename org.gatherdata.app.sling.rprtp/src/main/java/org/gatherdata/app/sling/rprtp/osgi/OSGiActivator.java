@@ -8,8 +8,8 @@ import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.sling.api.resource.ResourceDecorator;
 import org.apache.sling.api.resource.ResourceProvider;
-import org.apache.sling.jcr.resource.JcrResourceTypeProvider;
 
 import com.google.inject.Inject;
 
@@ -25,7 +25,7 @@ public final class OSGiActivator
     Iterable<ResourceProvider> resourceProviders;
 
     @Inject
-    Export<JcrResourceTypeProvider> resourceTypeProvider;
+    Export<ResourceDecorator> resourceTypeProvider;
     
     /**
      * Called whenever the OSGi framework starts our bundle

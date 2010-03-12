@@ -7,8 +7,8 @@ import static org.ops4j.peaberry.util.TypeLiterals.iterable;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.sling.api.resource.ResourceDecorator;
 import org.apache.sling.api.resource.ResourceProvider;
-import org.apache.sling.jcr.resource.JcrResourceTypeProvider;
 import org.ops4j.peaberry.util.AbstractWatcher;
 import org.ops4j.peaberry.Export;
 import org.ops4j.peaberry.Import;
@@ -36,7 +36,7 @@ public class GuiceBindingModule extends AbstractModule {
         // export the ResourceTypeProvider
         Properties mrtpAttrs = new Properties();
         mrtpAttrs.put(Constants.SERVICE_RANKING, new Long(100));
-        bind(export(JcrResourceTypeProvider.class))
+        bind(export(ResourceDecorator.class))
             .toProvider(service(new MappedResourceTypeProvider())
                 .attributes(properties(mrtpAttrs))
                 .export());

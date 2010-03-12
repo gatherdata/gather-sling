@@ -93,7 +93,7 @@
 
             <!-- gather-camel and dependencies -->
             <param>scan-features:mvn:org.apache.camel.karaf/features/${apache-camel.version}/xml/features!/camel-osgi</param>
-            <param>scan-features:mvn:org.gatherdata.gather-camel/org.gatherdata.camel.features/${gather-camel.version}/xml/features!/gather-camel,gather-camel.example</param>
+            <param>scan-features:mvn:org.gatherdata.gather-camel/org.gatherdata.camel.features/${gather-camel.version}/xml/features!/camel-dependencies,gather-camel,gather-camel.example</param>
 
             <!-- gather-sling dependencies -->
             <param>scan-features:mvn:org.gatherdata.app.gather-sling/org.gatherdata.app.sling.features/1.0-SNAPSHOT/xml/features!/sling-dependencies@1</param>
