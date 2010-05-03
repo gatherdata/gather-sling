@@ -1,1 +1,1 @@
---noConsole
+--noConsole --repositories=http://repository.gatherdata.org/content/groups/public
