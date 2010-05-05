@@ -106,22 +106,22 @@ public class RosaResourceProvider implements ResourceProvider {
     }
 
     private Resource getRosaFormListResource(ResourceResolver resourceResolver, String fullPath) {
-        if (rosaListResource == null) {
+        //if (rosaListResource == null) {
             rosaListResource = new SyntheticMapResource(resourceResolver, fullPath, "rosa/list");
             rosaListResource.put("serviceClass", FormCatalogService.class.getName());
             rosaListResource.put("entityClass", FormTemplate.class.getName());
             rosaListResource.put("basePath", PROVIDER_ROOT);
-        }
+        //}
         return rosaListResource;
     }
 
     private Resource getRosaDataResource(ResourceResolver resourceResolver, String fullPath) {
-        if (rosaDataResource == null) {
+        //if (rosaDataResource == null) {
             rosaDataResource = new SyntheticMapResource(resourceResolver, fullPath, "rosa/data");
 
             rosaDataResource.put("producerClass", "org.gatherdata.camel.http.ServletProxyProducer");
             rosaDataResource.put("workflow", "xforms-workflow");
-        }
+        //}
         return rosaDataResource;
     }
 

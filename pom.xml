@@ -19,10 +19,10 @@
     <karaf.startRemoteShell>false</karaf.startRemoteShell> 
     <karaf.startLocalConsole>true</karaf.startLocalConsole>
     <karaf.systemBundlesStartLevel>0</karaf.systemBundlesStartLevel>
+    <felix.fileinstall.dir>${basedir}/etc</felix.fileinstall.dir>
 
     <!-- pax-runner runtime properties -->
     <sling.home>./sling</sling.home>
-    <bundles.configuration.location>${basedir}/config</bundles.configuration.location>
     <org.osgi.service.http.port>8090</org.osgi.service.http.port>
     <org.osgi.service.http.port.secure>8443</org.osgi.service.http.port.secure>
     <org.osgi.framework.system.packages.extra>com.sun.org.apache.xalan.internal.res,com.sun.org.apache.xpath.internal.objects,com.sun.org.apache.xpath.internal.jaxp,com.sun.org.apache.xml.internal.utils,com.sun.org.apache.xpath.internal</org.osgi.framework.system.packages.extra>
@@ -98,7 +98,6 @@
             <param>scan-features:mvn:org.gatherdata.app.gather-sling/org.gatherdata.app.sling.features/1.0-SNAPSHOT/xml/features!/sling-dependencies@1</param>
             <param>scan-features:mvn:org.gatherdata.app.gather-sling/org.gatherdata.app.sling.features/1.0-SNAPSHOT/xml/features!/sling-felix@2</param>
             <param>scan-features:mvn:org.gatherdata.app.gather-sling/org.gatherdata.app.sling.features/1.0-SNAPSHOT/xml/features!/apache-sling</param>
-            <param>mvn:org.ops4j.pax.confman/pax-confman-propsloader/0.2.2</param>
 
             <!-- gather-commons and dependencies -->
             <!-- param>scan-features:mvn:org.gatherdata.gather-commons/org.gatherdata.commons.features/${gather-commons.version}/xml/features!/neo4j-dependencies</param -->

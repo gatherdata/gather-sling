@@ -18,6 +18,8 @@
 	 workflow = resourceMap.get('workflow');
 
 	if (producerClass != undefined) {
+    var producerClassAsClass = eval("Packages."+producerClass);
+    print("producerClass: " + producerClassAsClass);
 		foundProducer = sling.getService(eval("Packages."+producerClass));
 	} else {
 		foundProducer = undefined;
