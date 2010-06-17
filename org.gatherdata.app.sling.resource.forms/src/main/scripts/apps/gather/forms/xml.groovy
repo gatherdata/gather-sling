@@ -1,4 +1,5 @@
 import org.gatherdata.archiver.core.model.GatherArchive;
+import groovy.xml.MarkupBuilder 
 
 response.setContentType("text/xml");
 response.setCharacterEncoding("UTF-8"); 
