@@ -23,7 +23,7 @@ import com.google.inject.Inject;
 
 public class OrbeonResourceProvider implements ResourceProvider {
 
-    public static final String PROVIDER_ROOT = "/orbeon";
+    public static final String PROVIDER_ROOT = "/gather/orbeon";
 
     public static final String[] RESOURCE_TYPES = new String[] {
         OrbeonFormResource.RESOURCE_TYPE,
