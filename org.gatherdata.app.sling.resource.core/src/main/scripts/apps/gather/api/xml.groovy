@@ -46,9 +46,9 @@ mb.response() {
             resultMap = adapter.getAdapter(resultEntity, org.apache.sling.api.resource.ValueMap.class);
             record() {
                 resultMap.each { key, value ->
-                   mb.yieldUnescaped "<${key}>"
-                   mb.yield "${value}"
-                   mb.yieldUnescaped "</${key}>"
+                   mkp.yieldUnescaped "<${key}>"
+                   mkp.yield "${value}"
+                   mkp.yieldUnescaped "</${key}>"
                 }
             }
             rowsCreated++;
