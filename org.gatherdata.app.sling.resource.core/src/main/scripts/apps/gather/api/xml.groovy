@@ -43,6 +43,7 @@ mb.response() {
     startRow(0)
     data() {    	
 	    resultSet.eachWithIndex { resultEntity, i ->
+        try {
             resultMap = adapter.getAdapter(resultEntity, org.apache.sling.api.resource.ValueMap.class);
             record() {
                 resultMap.each { key, value ->
@@ -52,6 +53,9 @@ mb.response() {
                 }
             }
             rowsCreated++;
+          } catch (Exception e) {
+            log.error("skipping bad record, which caused: " + e)
+          }
         }
     }
     endRow(rowsCreated)

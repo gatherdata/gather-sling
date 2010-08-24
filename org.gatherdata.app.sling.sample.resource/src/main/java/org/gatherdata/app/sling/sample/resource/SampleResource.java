@@ -65,4 +65,24 @@ public class SampleResource implements Resource {
 		System.out.println("SampleResource.adaptTo(" + type + ")");
 		return null;
 	}
+
+  public String getName() {
+    return null;  //To change body of implemented methods use File | Settings | File Templates.
+  }
+
+  public Resource getParent() {
+    return null;  //To change body of implemented methods use File | Settings | File Templates.
+  }
+
+  public Iterator<Resource> listChildren() {
+    return null;  //To change body of implemented methods use File | Settings | File Templates.
+  }
+
+  public Resource getChild(String s) {
+    return null;  //To change body of implemented methods use File | Settings | File Templates.
+  }
+
+  public boolean isResourceType(String s) {
+    return false;  //To change body of implemented methods use File | Settings | File Templates.
+  }
 }

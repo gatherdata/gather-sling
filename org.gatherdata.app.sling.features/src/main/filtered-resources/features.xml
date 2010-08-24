@@ -42,10 +42,10 @@
     <bundle>mvn:org.apache.sling/org.apache.sling.commons.mime/2.1.4</bundle>
     <bundle>mvn:org.apache.sling/org.apache.sling.commons.classloader/1.1.5-SNAPSHOT</bundle>
     <bundle>mvn:org.apache.sling/org.apache.sling.api/2.0.9-SNAPSHOT</bundle>
-    <bundle>mvn:org.apache.sling/org.apache.sling.commons.auth/0.9.0-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.sling/org.apache.sling.settings/0.1.0-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.sling/org.apache.sling.auth.core/1.0.3-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.sling/org.apache.sling.auth.form/1.0.1-SNAPSHOT</bundle>
     <bundle>mvn:org.apache.sling/org.apache.sling.engine/2.0.7-SNAPSHOT</bundle>
-    <bundle>mvn:org.apache.sling/org.apache.sling.httpauth/2.0.5-SNAPSHOT</bundle>
-    <bundle>mvn:org.apache.sling/org.apache.sling.openidauth/0.9.1-SNAPSHOT</bundle>
     <bundle>mvn:org.apache.sling/org.apache.sling.adapter/2.0.4</bundle>
     <bundle>mvn:org.apache.sling/org.apache.sling.servlets.resolver/2.0.9-SNAPSHOT</bundle>
     <bundle>mvn:org.apache.sling/org.apache.sling.servlets.get/2.0.9-SNAPSHOT</bundle>
@@ -68,14 +68,14 @@
     <bundle>mvn:org.apache.sling/org.apache.sling.extensions.groovy/1.0.0-SNAPSHOT</bundle>
     <bundle>mvn:org.apache.sling/org.apache.sling.jcr.api/2.0.7-SNAPSHOT</bundle>
     <bundle>mvn:org.apache.sling/org.apache.sling.jcr.base/2.0.7-SNAPSHOT</bundle>
-    <bundle>mvn:org.apache.jackrabbit/jackrabbit-api/2.0.0</bundle>
+    <bundle>mvn:org.apache.jackrabbit/jackrabbit-api/2.1.1</bundle>
     <bundle>mvn:org.apache.sling/org.apache.sling.jcr.jackrabbit.server/2.0.7-SNAPSHOT</bundle>
     <bundle>mvn:org.apache.sling/org.apache.sling.jcr.jackrabbit.usermanager/2.0.5-SNAPSHOT</bundle>
     <bundle>mvn:org.apache.sling/org.apache.sling.jcr.jackrabbit.accessmanager/2.0.5-SNAPSHOT</bundle>
-    <bundle>mvn:org.apache.jackrabbit/jackrabbit-jcr-commons/2.0.0</bundle>
-    <bundle>mvn:org.apache.jackrabbit/jackrabbit-spi/2.0.0</bundle>
-    <bundle>mvn:org.apache.jackrabbit/jackrabbit-spi-commons/2.0.0</bundle>
-    <bundle>mvn:org.apache.jackrabbit/jackrabbit-jcr-rmi/2.0.0</bundle>
+    <bundle>mvn:org.apache.jackrabbit/jackrabbit-jcr-commons/2.1.1</bundle>
+    <bundle>mvn:org.apache.jackrabbit/jackrabbit-spi/2.1.1</bundle>
+    <bundle>mvn:org.apache.jackrabbit/jackrabbit-spi-commons/2.1.1</bundle>
+    <bundle>mvn:org.apache.jackrabbit/jackrabbit-jcr-rmi/2.1.1</bundle>
     <bundle>mvn:org.apache.sling/org.apache.sling.jcr.webdav/2.0.9-SNAPSHOT</bundle>
     <bundle>mvn:org.apache.sling/org.apache.sling.jcr.davex/0.9.0-SNAPSHOT</bundle>
   </feature>
