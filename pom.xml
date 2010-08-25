@@ -13,6 +13,7 @@
   <properties>
     <!-- build properties -->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <apache-snapshots.repos>http://repository.apache.org/content/groups/snapshots-group</apache-snapshots.repos>
 
     <!-- karaf config -->
     <karaf.version>1.2.0</karaf.version>
@@ -142,7 +143,7 @@
     </repository>
     <repository>
       <id>Apache Snapshots</id>
-      <url>http://repository.apache.org/content/groups/snapshots-group</url>
+      <url>${apache-snapshots.repos}</url>
       <snapshots>
         <enabled>true</enabled>
       </snapshots>
@@ -157,7 +158,18 @@
         <enabled>true</enabled>
       </snapshots>
     </pluginRepository>
+    <pluginRepository>
+      <id>ops4j.snapshots</id>
+      <url>http://repository.ops4j.org/mvn-snapshots</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </pluginRepository>
   </pluginRepositories>
+
 
   <distributionManagement>
     <repository>
