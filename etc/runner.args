@@ -1,1 +1,1 @@
---noConsole --defaultRepositories=+http://repository.apache.org/content/groups/snapshots-group@snapshots
+--noConsole 
