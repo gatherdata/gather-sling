@@ -46,6 +46,7 @@
     <junit.version>4.5</junit.version>
     <hamcrest.version>1.1</hamcrest.version>
     <easymock.version>2.3.0</easymock.version>
+    <gwt.version>1.7.1</gwt.version>
   </properties>
 
   <packaging>pom</packaging>

@@ -50,6 +50,11 @@
                   <artifactId>maven-sling-plugin</artifactId> 
                   <version>2.0.5-SNAPSHOT</version> 
               </plugin> 
+              <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>gwt-maven-plugin</artifactId>
+                <version>1.2</version>
+              </plugin>
           </plugins>
       </pluginManagement>
   </build>

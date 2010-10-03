@@ -37,15 +37,15 @@
     <bundle>mvn:org.apache.felix/org.apache.felix.http.whiteboard/2.0.4</bundle>
   </feature>
 
-  <feature name="apache-sling" version="6-SNAPSHOT">
+  <feature name="apache-sling" version="7">
     <bundle>mvn:org.apache.sling/org.apache.sling.commons.osgi/2.0.6</bundle>
     <bundle>mvn:org.apache.sling/org.apache.sling.commons.mime/2.1.4</bundle>
-    <bundle>mvn:${apache-snapshots.repos}!org.apache.sling/org.apache.sling.commons.classloader/1.1.5-SNAPSHOT</bundle>
-    <bundle>mvn:${apache-snapshots.repos}!org.apache.sling/org.apache.sling.api/2.0.9-SNAPSHOT</bundle>
+    <bundle>mvn:${apache-snapshots.repos}!org.apache.sling/org.apache.sling.commons.classloader/1.2.0</bundle>
+    <bundle>mvn:${apache-snapshots.repos}!org.apache.sling/org.apache.sling.api/2.1.0</bundle>
     <bundle>mvn:${apache-snapshots.repos}!org.apache.sling/org.apache.sling.settings/0.1.0-SNAPSHOT</bundle>
     <bundle>mvn:${apache-snapshots.repos}!org.apache.sling/org.apache.sling.auth.core/1.0.3-SNAPSHOT</bundle>
     <bundle>mvn:${apache-snapshots.repos}!org.apache.sling/org.apache.sling.auth.form/1.0.1-SNAPSHOT</bundle>
-    <bundle>mvn:${apache-snapshots.repos}!org.apache.sling/org.apache.sling.engine/2.0.7-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.sling/org.apache.sling.engine/2.1.0</bundle>
     <bundle>mvn:org.apache.sling/org.apache.sling.adapter/2.0.4</bundle>
     <bundle>mvn:${apache-snapshots.repos}!org.apache.sling/org.apache.sling.servlets.resolver/2.0.9-SNAPSHOT</bundle>
     <bundle>mvn:${apache-snapshots.repos}!org.apache.sling/org.apache.sling.servlets.get/2.0.9-SNAPSHOT</bundle>
