@@ -2,6 +2,7 @@
 *.iml
 *.ipr
 *.iws
+.idea/
 .hg/
 .hgignore
 .svn
@@ -11,6 +12,7 @@
 .settings/
 target/
 runner/
+.DS_Store
 org.gatherdata.app.sling.gwt.example/war/gather.example/
 org.gatherdata.app.sling.gwt.example/war/WEB-INF/classes/
 org.gatherdata.app.sling.gwt.smartgwt/war/gather.smartgwt/
